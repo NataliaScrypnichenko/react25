@@ -36,21 +36,24 @@
 //  щоб швидко написати таку фцю то пишемо rsc дає підсказку
 //import React from 'react'; це видаляємо
 
- import {FC} from "react";
+ import {FC, ReactNode} from "react";
 
-type MyComponentPropType={text:string}
+type MyComponentPropType={
+    title:string
+    children?:ReactNode
+}
 
-const MyComponent:FC<MyComponentPropType> = ({text}) => {
+const MyComponent:FC<MyComponentPropType> = ({title,children}) => {
     return (
         <div className="text-3xl font-bold underline">
-            {text}
+            <h2>{title}</h2>
+            <p>{children}</p>
         </div>
     );
 };
 
 export default MyComponent;
 //Tailwind// 1.4
-
 // настройка проєкта
 ///npm install -D tailwindcss postcss autoprefixer-вставляємо це в термінал із сайта https://tailwindcss.com/ це завантажується
 // необхідна бібліотека тобто додається в покет.джейсон бібліотека нова("postcss","tailwindcss","autoprefixer")
@@ -59,3 +62,14 @@ export default MyComponent;
 //\\Потрібно все настроїти а потім запустити проєкт
 //потім використовуємо різні класи ("text-3xl font-bold underline"),і видаляємо імпорт
 // зайти в розділ Customization то там можна використовувати різні класи Spacing..Layout- можна використати для побудови колонок
+
+//1.5 Children
+// якщо хочемо додати щось між  <MyComponent text={'hello 1'}/>
+//    Lorem ipsum dolor sit amet, consectetur adipisicing elit.</MyComponent>
+//          то Children
+// Children може бути і не string то пишемо children:ReactNode, і потрібно всім задати розгорнутий   стиль ,
+// а щоб не давати всім то type MyComponentPropType={
+//     title:string
+//     children?:ReactNode
+// }
+//
