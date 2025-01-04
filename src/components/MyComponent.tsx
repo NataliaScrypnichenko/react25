@@ -38,11 +38,14 @@
 //import React from 'react'; це видаляємо
 
  import {FC} from "react";
+
+import styles from './MyComponent.module.css'
+
 type MyComponentPropType={text:string}
 
 const MyComponent:FC<MyComponentPropType> = ({text}) => {
     return (
-        <div>
+        <div className={styles.target}>
             {text}
         </div>
     );

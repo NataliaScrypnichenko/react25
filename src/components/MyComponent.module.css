@@ -1,0 +1,10 @@
+/*тут ми створюємо власну sсс або модульну ,її ми називаємо так як називається файл до якого вона відноситься*/
+
+.target{
+    background: slategray;
+}
+/*потім її ми підключаємо до файла 1.import './MyComponent.css'(<div className={'target'}>)-це стандартний варіань
+2.робимо модульний scc  даємо назву ще модуль ====import styles from './MyComponent.module.css'==<div className={styles.target}>
+            {text} </div>
+
+*/
