@@ -33,22 +33,29 @@
 // //потім ми добавляємо FunctionComponent(FC) і вони будуть мати свій тип це FC<MyComponentPropType>
 // export default MyComponent;
 
-
 //  щоб швидко написати таку фцю то пишемо rsc дає підсказку
 //import React from 'react'; це видаляємо
 
  import {FC} from "react";
 
-import styles from './MyComponent.module.css'
-
 type MyComponentPropType={text:string}
 
 const MyComponent:FC<MyComponentPropType> = ({text}) => {
     return (
-        <div className={styles.target}>
+        <div className="text-3xl font-bold underline">
             {text}
         </div>
     );
 };
 
 export default MyComponent;
+//Tailwind// 1.4
+
+// настройка проєкта
+///npm install -D tailwindcss postcss autoprefixer-вставляємо це в термінал із сайта https://tailwindcss.com/ це завантажується
+// необхідна бібліотека тобто додається в покет.джейсон бібліотека нова("postcss","tailwindcss","autoprefixer")
+// потім робимо другу дію в терміналі npx tailwindcss init створює ще файл (tailwind.config.js)-
+//потім в файл index.css вставляємо (@tailwind base;@tailwind components; @tailwind utilities;) потім запускаємо проєкт
+//\\Потрібно все настроїти а потім запустити проєкт
+//потім використовуємо різні класи ("text-3xl font-bold underline"),і видаляємо імпорт
+// зайти в розділ Customization то там можна використовувати різні класи Spacing..Layout- можна використати для побудови колонок
