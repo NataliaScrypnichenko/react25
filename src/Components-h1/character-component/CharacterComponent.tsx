@@ -10,6 +10,7 @@ export const CharacterComponent = ({item,children}: CharacterComponentProps) => 
     return (
         <div className='my-12 border-2 '>
             <h2 className='text-blue-400' >{item.name} {item.surname}</h2>
+            <img src={item.photo} alt={item.name} />
             <p className='text-4xl text-amber-800'>{children}</p>
         </div>
     );
