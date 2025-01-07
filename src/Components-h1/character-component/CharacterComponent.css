@@ -1,8 +1,10 @@
 div {
-    display: inline-block;
+   display: flex;
     justify-content: center;
+    flex-direction: column;
     background: burlywood;
 }
 img{
+    justify-content: center;
     width: 200px;
 }
