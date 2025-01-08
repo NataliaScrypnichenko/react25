@@ -48,3 +48,4 @@ export default tseslint.config({
   },
 })
 ```
+не створила папку 2-2 зразу з гілки іде main
