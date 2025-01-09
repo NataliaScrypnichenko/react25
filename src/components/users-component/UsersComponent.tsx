@@ -5,11 +5,11 @@ import UserComponent from "../user-component/UserComponent.tsx";
 const UsersComponent = () => {
     const [users,setUsers]=useState <IUser[]>([]);
     useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
-            .then(response => {
-                setUsers(response);// запускає перебудову компонента
-            });
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        //     .then(value => value.json())
+        //     .then(response => {
+        //         setUsers(response);// запускає перебудову компонента
+        //     });
         return () => {
             console.log('done');
         }
