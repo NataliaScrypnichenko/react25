@@ -5,6 +5,7 @@ import {getUsers} from "../../models/services/api.servic.ts";
 
 const UsersComponent = () => {
     const [users,setUsers]=useState <IUser[]>([]);
+    const[item,setItem]=useState<IUser | null>(null);
     useEffect(()=>{
         const FetchData=async ()=>{
             const users = await getUsers();
@@ -17,11 +18,16 @@ const UsersComponent = () => {
         }
     }, []);//можна використовувати ф-цію цю аба в файлі арі.
 
+    const foo=(item:IUser)=>{
+        setItem(item);
+    }
     return (
         <div>
             {
-                // users.map(value =><div key={value.id}>{value.name}</div>) так не харак. робимо ітерацію
-                users.map(user => <UserComponent key={user.id} item={user}/>)
+                item && <div>{JSON.stringify(item)}</div>
+            }
+            {
+                users.map(user => <UserComponent foo={foo} key={user.id} item={user}/>)
             }
         </div>
     );

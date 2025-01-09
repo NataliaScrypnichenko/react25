@@ -1,15 +1,20 @@
-// в цьому файлі відображається дані які ми хочемо побачити
+// в цьому файлі відображається данні які ми хочемо побачити
 // щоб не ругалося на item типізуємо йщго :FC<UserPropType>
 import  {FC} from 'react';
 import {IUser} from "../../models/IUser.ts";
 type UserPropType = {
     item:IUser
+     foo: (item:IUser) => void;
 }
 
-const UserComponent:FC<UserPropType> = ({item}) => {
-
+const UserComponent:FC<UserPropType> = ({item, foo}) => {
     return (
+        <>
             <div >{item.name}</div>
+            <button onClick={()=>{
+               foo(item);
+            }}>details</button>
+        </>
     );
 };
 
