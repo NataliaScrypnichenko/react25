@@ -8,3 +8,5 @@ https://jsonplaceholder.typicode.com/todos - тут масив даних. оз�
 
 Task 2 q2faxfR
 Рівно те саме що і task 2, але дані отримати з апі - https://dummyjson.com/todos
+
+виконано Task2 із дз2 об'єднала   task1 ohm4AivCEBv з Task 2 q2faxfR і далі виконувала
