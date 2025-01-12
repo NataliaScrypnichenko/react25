@@ -9,5 +9,5 @@ export const UserService= {
     getUser: async (id:number) => {
       return  await fetch(urls.users.buId(id))
             .then(value => value.json());
-    }
+    },
 }
