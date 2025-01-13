@@ -5,9 +5,11 @@ import {CartPage} from "../pages/CartsPage.tsx";
 
  export const routes = createBrowserRouter([{
     path: "/",element:<MainLayout/>,children:[
-        {path:'users',element:<UsersPage/>, children:[
-                // / урла <UsersPage заміниться на CartsPage
-                {path:':id/carts', element:<CartPage/>}
-            ]},
+        {
+            path:'users',element:<UsersPage/>
+        },
+         {
+             path:'/users/:id/carts',element:<CartPage/>
+         }
     ]
 }])
