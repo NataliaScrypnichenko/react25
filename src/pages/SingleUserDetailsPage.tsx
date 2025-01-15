@@ -10,9 +10,8 @@ const SingleUserDetailsPage =()=>{
     return(
         <div>
             {user.email}
-            <p>{user.name}</p>
-            {/*{JSON.stringify(state)}*/}
         </div>
     )
 }
 export default SingleUserDetailsPage;
+// тут не повино відображатися інформація {user.email} тільки в компонентак дз3.1 а зараз це робиться для спрощення

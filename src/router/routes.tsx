@@ -10,7 +10,10 @@ import SingleUserDetailsPage from "../pages/SingleUserDetailsPage.tsx";
     {
         path: '', element:<Layout/>,children:[
             {index: true, element:<HomePage/>},
-            {path:'users',element:<UserPage/>},
+            {path:'users',element:<UserPage/>, children:[
+                //хочу пости певного користувача users/posts/1...інформація відображається в низу тобто +пости
+                    {path:'posts/:userId', element:<PostsPage/>}
+                ]},
             {path:'users/details',element:<SingleUserDetailsPage/>},
             {path:'posts', element:<PostsPage/>}
         ]
