@@ -1,8 +1,11 @@
-const App=() => {
+import {FC} from "react";
+
+type PropsType = {}
+const App:FC<PropsType>=() => {
 
   return (
     <div>
-
+         App content
     </div>
   );
 };
