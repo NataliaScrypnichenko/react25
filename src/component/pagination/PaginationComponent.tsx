@@ -14,22 +14,25 @@
      // потрібно зробити перевірку чи він існуэ
     return (
         <div>
-            <button onClick={()=>{
+            <button onClick={() => {
                 const pg = query.get('pg');
-                if(pg){
-                   let currentPage =+pg
-                    setQuery({pg:(++currentPage).toString()})
+                if (pg) {
+                    let currentPage = +pg
+                    setQuery({pg: (--currentPage).toString()})
                 }
-            }}>next</button>
-            <button onClick={()=>{
+            }}>prev
+            </button>
+            <button onClick={() => {
                 const pg = query.get('pg');
-                if(pg){
-                    let currentPage =+pg
-                    setQuery({pg:(--currentPage).toString()})
+                if (pg) {
+                    let currentPage = +pg
+                    setQuery({pg: (++currentPage).toString()})
                 }
-            }}>prev</button>
+            }}>next
+            </button>
+
         </div>
     );
-};
-// при виклику кнопок адрес елек. збільшується і її можна зчитувати інформацію це в файлі Some
-export default PaginationComponent;
+ };
+ // при виклику кнопок адрес елек. збільшується і її можна зчитувати інформацію це в файлі Some
+ export default PaginationComponent;

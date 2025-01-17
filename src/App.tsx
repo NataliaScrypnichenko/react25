@@ -2,7 +2,7 @@
 //формуємо 3 файл Melyout але в його ролі буде виступати АРР (але перед цим наводимо порядок в main.tsx)
 
 import PaginationComponent from "./component/pagination/PaginationComponent.tsx";
-import {Some} from "./component/some/Some.tsx";
+import {UsersComponent} from "./component/users-component/UsersComponent.tsx";
 
 
 
@@ -10,8 +10,7 @@ const App=() => {
 
   return (
     <div>
-        <Some/>
-           hello
+        <UsersComponent/>
         <PaginationComponent/>
     </div>
   );
