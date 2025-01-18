@@ -1,8 +1,10 @@
+import UsersComponent from "../component/users-component/UsersComponent.tsx";
 
 
-const UsersPage = () => {
+export const UsersPage = () => {
     return (
         <div>
+              Users Page
             <UsersComponent/>
         </div>
     );
