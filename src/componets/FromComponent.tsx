@@ -1,4 +1,6 @@
 import {useForm} from "react-hook-form";
+import {joiResolver} from "@hookform/resolvers/joi";
+import userValiadator from "../valiadtors/user.valiadator.ts";
 
 interface IFromProps {
   username: string;
@@ -6,14 +8,10 @@ interface IFromProps {
   age: string;
 }
 const FromComponent = () => {
+     //привязуємо ф.валідатор
 
-     const {
-         handleSubmit,
-         register,
-         formState:{errors,isValid}
-     } = useForm<IFromProps>({
-         mode: 'all',
-     });
+     const {handleSubmit, register, formState:{errors,isValid}}
+         = useForm<IFromProps>({mode: 'all',resolver:joiResolver(userValiadator)});//видає помилку і ідемо їх кастилізувати в файл user.vali//
 
     const customHandler = (formDataProps:IFromProps)=>{
         console.log(formDataProps);
