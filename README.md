@@ -12,3 +12,10 @@ UYuu2f1
 
 
 	integer-це число
+додали 
+"react-router-dom": "^7.1.1",
+"react-hook-form": "^7.51.5",
+"joi": "17.13.0",
+"@hookform/resolvers": "^3.3.4",
+"axios": "^1.7.9",
+"react-router": "^7.1.1"
