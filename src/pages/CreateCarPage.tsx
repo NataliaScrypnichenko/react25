@@ -13,21 +13,19 @@ const CreateCarPage = () => {
        {mode:'all',resolver:joiResolver(carValidator)});
 
    const createHandle = (data:ICar) => {
-      addCar(data);
-
+       addCar(data);
+     //console.log(data);
    }
 
     // щоб працював прошарок createHandle, який дозволить перевіряти об'єкт яки збережений в діві то resolver:joiResolver(carValidator)})
     return (
         <div >
             {/*викликає handleSubmit який приймає колбек функцію */}
-            <form onSubmit={handleSubmit(createHandle)}></form>
-
+            <form onSubmit={handleSubmit(createHandle)}>
             <div>
                 <input type='text'{...register('brand')}/>
                 <div>{errors.brand?.message}</div>
             </div>
-
             <div >
             <input type= 'number'{...register('price')}/>
                 <div>{errors.price?.message}</div>
@@ -38,6 +36,7 @@ const CreateCarPage = () => {
                 <div>{errors.year?.message}</div>
             </div>
             <button >save car</button>
+            </form>
         </div>
     );
 };
