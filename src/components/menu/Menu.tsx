@@ -1,10 +1,21 @@
 
+import {Link} from "react-router";
 
-const Menu = () => {
+// відображення переходу при нажаті на назву сторінки
+
+export const Menu = () => {
     return (
-        <div>
-            <link/>
-        </div>
+        <ul>
+            <li>
+                <Link to='/cars'>home</Link>
+            </li>
+            <li>
+                <Link to='/login'>login</Link>
+            </li>
+            <li>
+                <Link to='/auth/resources'>auth-resources</Link>
+            </li>
+        </ul>
     );
 };
 

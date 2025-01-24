@@ -21,6 +21,16 @@ Token-це ключ (тобто ми на сервыр запускаэмо св
 5. main.tsx прописуємо render(<RouterProvider router={routes} />
 6. запустити проєкт
 7. створюємо components=>menu
+8. впровадимо на <MainLayout/>=>
+9. LoginPage прописуємо там але потрібно робити через компоненти і де логін вставляємо зкопіроване з дейсон юзер=> username:"emilys"
+ "password":"emilyspass",expiresInMins:1
+10. робимо файл api.service.ts 
+11. потім переходимо на AuthResourcesPage; і робимо процес щоб отримати продукти із аутиф.=>  api.service.ts =>IProductsResponseModelType 
+і створюемо модель IProductsResponseModelType
+
+
+
+ПОТРІБНО СТВОРЮВАТИ ВІД ПРОБЛЕМИ ОПИСУЄШ А ПОТІМ СТВОРЮЄш тобто вирішуєш
 
 
 
