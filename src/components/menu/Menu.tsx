@@ -2,9 +2,9 @@
 
 const Menu = () => {
     return (
-        <>
-           <link/>
-        </>
+        <div>
+            <link/>
+        </div>
     );
 };
 
