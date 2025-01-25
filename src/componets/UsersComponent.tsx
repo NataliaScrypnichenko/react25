@@ -1,43 +1,27 @@
 import UserComponent from "./UserComponent.tsx";
-import {useCallback, useEffect, useMemo, useState} from "react";
+import {useCallback,  useMemo, } from "react";
+import {useFetch} from "./hooks/useFetch.tsx";
 
 
 const UsersComponent = () => {
     console.log("users");
-    const [users, setUsers] = useState([]);
-    // коли ми це робимо то із аналогією то це виконується 2 рази, але щоб цього не було то
-    // const arr:number[]=[11,22,33];
-    // то включаємо ф-цію useMemo
+    // тепер є хук новий який викликає двох інших-капсолює  і повертає користувачів
+    const users = useFetch();
+    // const [users] = useFetch()- можна так але потрібно переробити дів
     const arr:number[]=useMemo(() => {
         return [11,22,33]
     },[]);
 
-
-
     const foo =useCallback(()=>{
         console.log("test");
-    },[])
-
-
-    useEffect(()=>{
-       fetch("http://jsonplaceholder.typicode.com/users")
-        .then(value => value.json())
-           .then(value => {
-               setUsers(value)
-           });
-       return () => {
-           console.log('unsubscribe');
-       }
-
-
     },[]);
-
 
     return (
         <div>
              Users Component
-            {/*сюди тепер повина зайти функція /*/}
-            <UserComponent foo={foo} arr={arr}/>
+            {
+                users.map(value=><UserComponent item={value} foo={foo} arr={arr}/>)
+            }
         </div>
     );
 };

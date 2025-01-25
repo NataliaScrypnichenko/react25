@@ -3,12 +3,12 @@
 import {FC, memo} from "react";
 
 
-const UserComponent: FC<{ foo: () => void, arr:number[] }> = memo(({arr}) => {
+const UserComponent: FC<{ foo: () => void, arr: number[], item: {name:string} }> = memo(({arr, item}) => {
     console.log("user");
     console.log(arr)
     return (
         <div>
-            user
+            {item.name}
         </div>
     );
 });
