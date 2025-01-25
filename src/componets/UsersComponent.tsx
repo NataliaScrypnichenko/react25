@@ -1,18 +1,23 @@
 import UserComponent from "./UserComponent.tsx";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 
 const UsersComponent = () => {
     console.log("users");
     const [users, setUsers] = useState([]);
-    console.log(users);
+
+    // визиваємо useCallback
+    const foo =useCallback(()=>{
+        console.log("test");
+    },[])
+
+
     useEffect(()=>{
        fetch("http://jsonplaceholder.typicode.com/users")
         .then(value => value.json())
            .then(value => {
                setUsers(value)
            });
-       // то не будемо бачити яким чином вона від працьовувати(вона повина спрацювати при натисканні якоїсь кнопки
        return () => {
            console.log('unsubscribe');
        }
@@ -24,7 +29,8 @@ const UsersComponent = () => {
     return (
         <div>
              Users Component
-            <UserComponent/>
+            {/*сюди тепер повина зайти функція /*/}
+            <UserComponent foo={foo}/>
         </div>
     );
 };
