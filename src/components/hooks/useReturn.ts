@@ -2,18 +2,19 @@ import {useEffect, useState} from "react";
 
 
 export  const useReturn =<T,> (url:string) => {
-
-    const [odj, setOdj] =useState<T>()
+    // (url:string,defaultValue:T)=defaultValue-являє тойсамий тип який ми застосовуємо,тобто масив юзеріто потрібно передати  в App пустий [].другим аргументом
+    // якщо так не робити то буде помилка в АРР і потрібно провірити users &&
+    const [obj, setObj] =useState<T>();
 
    useEffect(() => {
 
        fetch(url)
            .then(value => value.json())
            .then(value => {
-               setOdj(value)
+               setObj(value)
            });
    }, [])
-    return odj;
+    return obj;
 
 }
 export default useReturn;
