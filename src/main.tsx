@@ -11,27 +11,30 @@ type UserSliceType = {
 }
 // сив.обєкт почаиковий
 const initialState: UserSliceType={users:[]}
+
 // формуємо usersSlice і тут фщрмуємо шматок сховища
 // Так можна його знайти  name:"usersSlice", а тут reducers:{} будуть в середині ф-ції які впливають на наш станю
-const usersSlice= createSlice({
-    name:"usersSlice",
+export const userSlice= createSlice({
+    name:"userSlice",
     // початковий стан і типізувати їх і потім вносю обєкт
     initialState:initialState,
     //впливаємо на початковий стан і ззмінюємо його
     //ф-я буде завантажувати обєкт і відправляти в середину і схопити асинхрон?action=точка відхоплення корисного навантаження,
     //state =об'єкт
     reducers:{
-      LoadUsers: (state:UserSliceType,action:PayloadAction<IUser[]>) => {
+      loadUsers: (state:UserSliceType,action:PayloadAction<IUser[]>) => {
                  state.users=action.payload}
     }
-
 })
+
+// цуе замість в UsersPage (/ dispatch( userSlice.actions.loadUsers(value));)
+export const userSliceActions={...userSlice.actions}
 
 
 // ств.сховище sі в середину передаю з чого буде складатись сховище(юзери пости(кімнати) називаються слайсами і вони роблять сховище
 const store= configureStore({
     reducer: {
-            userSlice:usersSlice.reducer
+            userSlice:userSlice.reducer
             // postsSlice:null
     }
 });

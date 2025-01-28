@@ -1,4 +1,4 @@
-import {useAppSelector} from "../main.tsx";
+import {useAppSelector, userSliceActions} from "../main.tsx";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 
@@ -13,8 +13,8 @@ const UsersPage = () => {
         fetch("http://jsonplaceholder.typicode.com/users")
             .then(value =>value.json())
             .then(value=>{
-
-                dispatch( value);
+                  dispatch(userSliceActions.loadUsers(value));
+                // dispatch( userSlice.actions.loadUsers(value));
         })
     },[]);
 
