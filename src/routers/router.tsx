@@ -1,8 +1,8 @@
 import {createBrowserRouter} from "react-router-dom";
 import MyLayout from "../layouts/MyLayout.tsx";
+import PostsPage from "../pages/PostsPage.tsx";
 import UsersPage from "../pages/UsersPage.tsx";
 import UserPage from "../pages/UserPage.tsx";
-import PostsPage from "../pages/PostsPage.tsx";
 
 
 class RouteObject{
