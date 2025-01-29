@@ -4,9 +4,11 @@ import {useAppDispatch} from "../hooks/UseAppDispatch.ts";
 import { userSliceActions} from "../slices/userSlice/UserSlice.ts";
 
 
+
+
 export const UsersPage  =  () =>{
 
-    const {users}= useAppSelector(({userSlice})=> userSlice);
+    const {users,loadState }= useAppSelector(({userSlice})=> userSlice);
 
     const dispatch = useAppDispatch();
 
@@ -16,6 +18,8 @@ export const UsersPage  =  () =>{
 
     return (
         <div>
+            {/*використовуємо loadState: boolean; і провіряємо */}
+            { !loadState && <div>Loading</div>}
             {
                 users.map((user) =>{return (<div key={user.id}>{user.name}</div>)})
             }
