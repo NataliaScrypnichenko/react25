@@ -9,10 +9,7 @@ import {store} from "./redux/sorte.ts";
 
 
 createRoot(document.getElementById("root")!).render (
-   //  тобто ця функція позволяє між всіма ділити сховище store={} повино будити посилання на сховище
    <Provider store={store}>
-
        <RouterProvider router={router} />
-
    </Provider>
 );
