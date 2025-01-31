@@ -5,4 +5,4 @@ import {routes} from "./routes/router.tsx";
 
 
 
-createRoot(document.getElementById('root')!).render(<RouterProvider router={routes} />)
+ createRoot(document.getElementById('root')!).render(<RouterProvider router={routes} />)
