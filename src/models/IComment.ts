@@ -3,5 +3,6 @@ id: string;
 name: string;
 email: string;
 body: string;
+text: string;
 
 }

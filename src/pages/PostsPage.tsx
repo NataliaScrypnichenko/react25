@@ -8,7 +8,7 @@ export const PostsPage = () => {
 
  const dispatch = useAppDispatch();
 
- const posts = useAppSelector((state => state.posts));
+ const posts = useAppSelector((state => state.postStoreSlice.post));
 
  useEffect(() => {
      dispatch(postActions.loadPosts)
