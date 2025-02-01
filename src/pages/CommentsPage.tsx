@@ -8,10 +8,10 @@ import {IComment} from "../models/IComment.ts";
 export const CommentsPage = () => {
     const dispatch = useAppDispatch();
 
-    const comment = useAppSelector(state => state .commentStoreSlice.comment);
+    const comment = useAppSelector(state => state.commntStoreSlise.comments);
 
     useEffect(() => {
-        dispatch(commentActions.loadComment)
+        dispatch(commentActions.loadComment())
     },[])
 
     return (

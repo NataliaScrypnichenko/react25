@@ -7,8 +7,11 @@ import {IPost} from "../models/IPost.ts";
 export const PostsPage = () => {
 
  const dispatch = useAppDispatch();
+ // @ts-ignore
+    const posts = useAppSelector(state =>state.postStoreSlice.posts );
 
- const posts = useAppSelector((state => state.postStoreSlice.post));
+
+ // const posts = useAppSelector((state=>state.postStoreSlice.posts));
 
  useEffect(() => {
      dispatch(postActions.loadPosts)

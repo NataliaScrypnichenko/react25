@@ -14,7 +14,7 @@ const UsersPage = () => {
       // console.log(users);
 
     useEffect(()=>{
-        dispatch(userActions.loadUsers);
+        dispatch(userActions.loadUsers());
     },[])
 
     return (

@@ -9,7 +9,7 @@ const ComplexPage = () => {
 
     const dispatch = useAppDispatch();
 
-    const {commentStoreSlice:{comments},postsStoreSlice:{posts},userStoreSlice:{users}} = useAppSelector(state => state);
+    const {commentStoreSlice:{comments},postStoreSlice:{posts},userStoreSlice:{users}} = useAppSelector(state => state);
 
     useEffect(() => {
         if(!users.length){
